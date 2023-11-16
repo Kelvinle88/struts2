@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+
+    <constant name="struts.devMode" value="true" />
+    <package name="default" extends="struts-default">
+        <action name="index">
+            <result>/index.jsp</result>
+        </action>
+        <action name="product" class="org.example.action.ProductAction">
+            <result name="success">/page/product.jsp</result>
+        </action>
+
+        <action name="showForm" class="org.example.action.UserAction" method="showForm">
+            <result name="success">/page/userForm.jsp</result>
+        </action>
+
+        <action name="submitForm" class="org.example.action.UserAction" method="submitForm">
+            <result name="success">/page/success.jsp</result>
+            <result name="error">/page/userForm.jsp</result>
+        </action>
+    </package>
+
+</struts>
